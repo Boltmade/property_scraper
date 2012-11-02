@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = PropertyScraper::VERSION
   gem.authors       = ["Ben Morris"]
   gem.email         = ["ben@bnmrrs.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Scrape ALLLL of the properties}
+  gem.summary       = %q{Scrape ALLL of the properties}
+  gem.homepage      = "https://github.com/ArtBarn/property_scraper"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
