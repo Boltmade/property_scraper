@@ -16,7 +16,7 @@ Or install it yourself as:
 
 ## Usage
 
-PropertyScraper.scrape('https://demeure.com/properties/le-petit-hopital')
+    PropertyScraper.scrape('https://demeure.com/properties/le-petit-hopital')
 
 ## Contributing
 
