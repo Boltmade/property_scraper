@@ -38,5 +38,17 @@ module PropertyScraper
       @from_price ||= (pricelable.children - pricelable.elements).map(&:text).inject(&:+)
     end
 
+    def data
+      {
+        :name           => self.name,
+        :location       => self.location,
+        :bedrooms       => self.bedrooms,
+        :bathrooms      => self.bathrooms,
+        :description    => self.description,
+        :photos         => self.photos,
+        :price          => self.price
+      }
+    end
+
   end
 end

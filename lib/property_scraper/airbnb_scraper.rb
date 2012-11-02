@@ -17,8 +17,8 @@ module PropertyScraper
       @lat ||= @wrapped_document.at("#map").attr('data-lat').to_f
     end
 
-    def long
-      @long ||= @wrapped_document.at("#map").attr('data-lng').to_f
+    def lng
+      @lng ||= @wrapped_document.at("#map").attr('data-lng').to_f
     end
 
     def bedrooms
@@ -39,12 +39,27 @@ module PropertyScraper
 
     def photos
       @wrapped_document.css('#photos_div img').map do |img|
-        img.attr('src').sub('mini_square.jpg', 'x_large.jpg')
+        img.attr('src').sub(/mini_square\.jpg|large\.jpg/, 'x_large.jpg')
       end.compact
     end
 
     def price
-      @from_price ||= self.find('#price_amount')
+      @from_price ||= "#{self.find('#price_amount')}/night"
+    end
+
+    def data
+      {
+        :name           => self.name,
+        :location       => self.location,
+        :lat            => self.lat,
+        :long           => self.long,
+        :bedrooms       => self.bedrooms,
+        :max_occupancy  => self.max_occupancy,
+        :bathrooms      => self.bathrooms,
+        :description    => self.description,
+        :photos         => self.photos,
+        :price          => self.price
+      }
     end
 
     protected

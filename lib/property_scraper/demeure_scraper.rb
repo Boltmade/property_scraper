@@ -1,36 +1,40 @@
 module PropertyScraper
-  class HomeawayScraper < Scraper
+  class DemeureScraper < Scraper
 
     def self.can_scrape?(url)
-      url =~ /.*homeaway.*\/vacation-rental\/p.*/
+      url =~ /.*demeure.*\/properties\/.*/
     end
 
     def name
-      @name ||= self.find('.topHeader h1')
+      @name ||= self.find('.viewproperty-summary h1')
     end
 
     def location
+      @location ||= self.find('.location')
     end
 
     def lat
-      @lat ||= @wrapped_document.at("#map").attr('data-lat').to_f
+      @lat ||= @wrapped_document.at('.map').attr('data-latitude').to_f
     end
 
     def lng
-      @lng ||= @wrapped_document.at("#map").attr('data-lng').to_f
+      @lng ||= @wrapped_document.at('.map').attr('data-longitude').to_f
     end
 
     def bedrooms
+      @bedrooms ||= self.find('.rooms .icon-rooms')
     end
 
     def max_occupancy
+      @max_occupancy ||= self.find('.rooms .icon-sleeps')
     end
 
     def bathrooms
+      @bathrooms ||= self.find('.rooms .icon-washrooms')
     end
 
     def description
-      @description ||= @wrapped_document.at('.prop-desc-txt').inner_html.strip
+      @description ||= @wrapped_document.at('.description').inner_html.strip
     end
 
     def photos
@@ -41,21 +45,6 @@ module PropertyScraper
 
     def price
       @from_price ||= self.find('#price_amount')
-    end
-
-    def data
-      {
-        :name           => self.name,
-        :location       => self.location,
-        :lat            => self.lat,
-        :long           => self.long,
-        :bedrooms       => self.bedrooms,
-        :max_occupancy  => self.max_occupancy,
-        :bathrooms      => self.bathrooms,
-        :description    => self.description,
-        :photos         => self.photos,
-        :price          => self.price
-      }
     end
 
     protected

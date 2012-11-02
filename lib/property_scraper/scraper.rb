@@ -12,7 +12,7 @@ module PropertyScraper
     end
 
     def scrape
-      @document = open(@url)
+      @document = open(@url).read
       @wrapped_document = Nokogiri::HTML(@document)
     end
 
@@ -21,6 +21,10 @@ module PropertyScraper
     end
 
     def method_missing
+    end
+
+    def data
+      {}
     end
 
     protected

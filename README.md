@@ -1,12 +1,10 @@
-# PropertyDownloader
-
-TODO: Write a gem description
+# PropertyScraper
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'property_downloader'
+    gem 'property_scraper'
 
 And then execute:
 
@@ -14,11 +12,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install property_downloader
+    $ gem install property_scraper
 
 ## Usage
 
-TODO: Write usage instructions here
+PropertyScraper.scrape('https://demeure.com/properties/le-petit-hopital')
 
 ## Contributing
 
