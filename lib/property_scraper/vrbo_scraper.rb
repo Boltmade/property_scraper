@@ -59,7 +59,7 @@ module PropertyScraper
     end
 
     def description
-      @description ||= @wrapped_document.css('.column-left > p')[2].content.strip
+      @description ||= @wrapped_document.css('.column-left > p')[2].inner_html.strip
     end
 
     def photos
