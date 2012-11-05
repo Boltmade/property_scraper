@@ -52,7 +52,7 @@ module PropertyScraper
         :name           => self.name,
         :location       => self.location,
         :lat            => self.lat,
-        :long           => self.long,
+        :lng            => self.lng,
         :bedrooms       => self.bedrooms,
         :max_occupancy  => self.max_occupancy,
         :bathrooms      => self.bathrooms,

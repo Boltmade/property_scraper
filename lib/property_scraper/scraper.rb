@@ -20,7 +20,7 @@ module PropertyScraper
       false
     end
 
-    def method_missing
+    def method_missing(method_sym)
     end
 
     def data
