@@ -22,15 +22,15 @@ module PropertyScraper
     end
 
     def bedrooms
-      @bedrooms ||= self.details[:bedrooms]
+      @bedrooms ||= self.details[:bedrooms].to_i
     end
 
     def max_occupancy
-      @max_occupancy ||= self.details[:max_occupancy]
+      @max_occupancy ||= self.details[:max_occupancy].to_i
     end
 
     def bathrooms
-      @bathrooms ||= self.details[:bathrooms]
+      @bathrooms ||= self.details[:bathrooms].to_f
     end
 
     def description

@@ -16,18 +16,18 @@ module PropertyScraper
     def lat
       matches = @document.match('lat:([\d\.]*)')
       if matches.length > 1
-        matches[1]
+        matches[1].to_f
       else
-        0
+        0.to_f
       end
     end
 
     def lng
       matches = @document.match('lng:([\d\.]*)')
       if matches.length > 1
-        matches[1]
+        matches[1].to_f
       else
-        0
+        0.to_f
       end
     end
 

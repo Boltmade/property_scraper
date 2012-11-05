@@ -14,11 +14,11 @@ module PropertyScraper
     end
 
     def bedrooms
-      @bedrooms ||= self.find('ul.pd_top li:nth-child(1) span')
+      @bedrooms ||= self.find('ul.pd_top li:nth-child(1) span').to_i
     end
 
     def bathrooms
-      @bathrooms ||= self.find('ul.pd_top li:nth-child(2) span')
+      @bathrooms ||= self.find('ul.pd_top li:nth-child(2) span').to_f
     end
 
     def description
