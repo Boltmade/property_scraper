@@ -40,7 +40,7 @@ module PropertyScraper
     def photos
       @wrapped_document.css('#photos_div img').map do |img|
         img.attr('src').sub('mini_square.jpg', 'x_large.jpg')
-      end.compact
+      end.compact.uniq
     end
 
     def price

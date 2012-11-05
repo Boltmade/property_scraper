@@ -30,7 +30,7 @@ module PropertyScraper
       @wrapped_document.css('.rsImg').each do |img|
         photos << img.attr('href')
       end
-      photos.compact
+      photos.compact.uniq
     end
 
     def price

@@ -67,7 +67,7 @@ module PropertyScraper
       @wrapped_document.css('.gallery-photo img').each do |img|
         photos << img.attr('src')
       end
-      photos.compact
+      photos.compact.uniq
     end
 
     def price
