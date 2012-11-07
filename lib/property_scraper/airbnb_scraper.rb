@@ -38,7 +38,7 @@ module PropertyScraper
     end
 
     def photos
-      @wrapped_document.css('#photos_div img').map do |img|
+      @wrapped_document.css('#photos_div a img').map do |img|
         img.attr('src').sub(/mini_square\.jpg|large\.jpg/, 'x_large.jpg')
       end.compact.uniq
     end
