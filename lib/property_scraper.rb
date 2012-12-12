@@ -5,11 +5,12 @@ require "property_scraper/airbnb_scraper"
 require "property_scraper/demeure_scraper"
 require "property_scraper/luxury_retreats_scraper"
 require "property_scraper/vrbo_scraper"
+require "property_scraper/love_home_swap_scraper"
 
 module PropertyScraper
   class InvalidUrl < StandardError; end
 
-  Scrapers = [DemeureScraper, AirbnbScraper, LuxuryRetreatsScraper, VrboScraper]
+  Scrapers = [DemeureScraper, AirbnbScraper, LuxuryRetreatsScraper, VrboScraper, LoveHomeSwapScraper]
 
   def self.scrape(url)
     Scrapers.each do |scraper|
