@@ -22,15 +22,15 @@ module PropertyScraper
     end
 
     def bedrooms
-      @bedrooms ||= self.find('p.sleeps').match(/Bedrooms (\d+)/)[1].strip
+      @bedrooms ||= self.find('p.sleeps').match(/Bedrooms (\d+)/)[1].strip.to_i
     end
 
     def max_occupancy
-      @max_occupancy ||= self.find('p.sleeps').match(/Sleeps (\d+)/)[1].strip
+      @max_occupancy ||= self.find('p.sleeps').match(/Sleeps (\d+)/)[1].strip.to_i
     end
 
     def bathrooms
-      @bathrooms ||= self.find('p.sleeps').match(/Bathrooms (\d+)/)[1].strip
+      @bathrooms ||= self.find('p.sleeps').match(/Bathrooms (\d+)/)[1].strip.to_i
     end
 
     def description
