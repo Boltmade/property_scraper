@@ -56,6 +56,10 @@ module PropertyScraper
       @location_details ||= policies_section['distances']
     end
 
+    def calendar_url
+      @calendar_url ||= @wrapped_document.at('iframe[src^="http://manage.myvacationrentalmanager"]').attr('src')
+    end
+
     def data
       {
         :name           => self.name,
